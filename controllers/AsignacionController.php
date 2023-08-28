@@ -135,7 +135,34 @@ class AsignacionController{
         }
     }
     
+    public static function eliminarAPI(){
+        try {
+            $usu_id = $_POST['asu_id'];
+            $usu_nombre = usu_nombre::find($usu_id);
+            $usu_catalogo->usu_catalogo = 0;
+            $usu_password->usu_password = 0;
+           
 
+            if($resultado['resultado'] == 1){
+                echo json_encode([
+                    'mensaje' => 'Registro eliminado correctamente',
+                    'codigo' => 1
+                ]);
+            }else{
+                echo json_encode([
+                    'mensaje' => 'Ocurrió un error',
+                    'codigo' => 0
+                ]);
+            }
+            // echo json_encode($resultado);
+        } catch (Exception $e) {
+            echo json_encode([
+                'detalle' => $e->getMessage(),
+                'mensaje' => 'Ocurrió un error',
+                'codigo' => 0
+            ]);
+        }
+    }
 
     public  static function roles()
     {

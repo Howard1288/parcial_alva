@@ -241,7 +241,47 @@ const modificar = async () => {
 };
 
 
-
+const eliminar = async (id) => {
+    if(await confirmacion('warning','¿Desea eliminar este registro?')){
+        const body = new FormData()
+        body.append('asignacion_id', id)
+        const url = '/final_IS2_alvarado/API/asignacion_programadores/eliminar';
+        const config = {
+            method : 'POST',
+            body
+        }
+        try {
+            const respuesta = await fetch(url, config)
+            const data = await respuesta.json();
+            console.log(data)
+            const {codigo, mensaje,detalle} = data;
+    
+            let icon = 'info'
+            switch (codigo) {
+                case 1:
+                    icon = 'success'
+                    buscar();
+                    break;
+            
+                case 0:
+                    icon = 'error'
+                    console.log(detalle)
+                    break;
+            
+                default:
+                    break;
+            }
+    
+            Toast.fire({
+                icon,
+                text: mensaje
+            })
+    
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 
 
 

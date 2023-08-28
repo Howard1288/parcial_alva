@@ -1,3 +1,4 @@
+import { Dropdown } from "bootstrap";
 import { validarFormulario, Toast,} from "../funciones";
 
 const formulario = document.querySelector('form')
@@ -12,7 +13,6 @@ btnCancelar.disabled = true;
 btnCancelar.parentElement.style.display = 'none';
 btnBuscar.disabled = true;
 btnBuscar.parentElement.style.display = 'none';
-
 
 
 const guardar = async (evento) => {

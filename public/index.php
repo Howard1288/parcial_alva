@@ -5,6 +5,7 @@ use MVC\Router;
 use Controllers\AppController;
 use Controllers\UsuarioController;
 use Controllers\AsignacionController;
+use Controllers\DetalleController;
 
 use Model\Usuario;
 
@@ -20,6 +21,11 @@ $router->get('/asignaciones', [AsignacionController::class,'index']);
 $router->get('/API/asignaciones/buscar', [AsignacionController::class,'buscarApi']);
 $router->post('/API/asignaciones/guardar', [AsignacionController::class,'guardarApi']);
 $router->post('/API/asignaciones/modificar', [AsignacionController::class,'modificarApi']);
+
+//estadistica
+
+$router->get('/usuario/estadistica', [DetalleController::class,'estadistica']);
+$router->get('/API/usuario/estadistica', [DetalleController::class,'detalleUsuarioAPI']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
