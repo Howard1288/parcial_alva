@@ -1,7 +1,6 @@
 <?php 
 require_once __DIR__ . '/../includes/app.php';
 
-
 use MVC\Router;
 use Controllers\AppController;
 use Controllers\UsuarioController;
@@ -21,8 +20,6 @@ $router->get('/asignaciones', [AsignacionController::class,'index']);
 $router->get('/API/asignaciones/buscar', [AsignacionController::class,'buscarApi']);
 $router->post('/API/asignaciones/guardar', [AsignacionController::class,'guardarApi']);
 $router->post('/API/asignaciones/modificar', [AsignacionController::class,'modificarApi']);
-
-
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
