@@ -137,10 +137,11 @@ class AsignacionController{
     
     public static function eliminarAPI(){
         try {
-            $usu_id = $_POST['asu_id'];
-            $usu_nombre = usu_nombre::find($usu_id);
-            $usu_catalogo->usu_catalogo = 0;
-            $usu_password->usu_password = 0;
+            $permiso_id = $_POST['permiso_id'];
+
+            $permiso = Asignacion::find($permiso_id);
+            $permiso->permiso_situacion = 0;
+            $resultado = $permiso->actualizar();
            
 
             if($resultado['resultado'] == 1){

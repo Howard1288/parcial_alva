@@ -1,6 +1,6 @@
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioUsuarios">
-        <h1>Registo de Usuarios</h1>
+        <h1>Registo de los Usuarios</h1>
         <input type="text" name="usu_id" id="usu_id">
         <div class="row mb-3">
             <div class="col">
@@ -10,7 +10,7 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="usu_catalogo">Ingrese su catalogo</label>
+                <label for="usu_catalogo">Ingrese su Numero de Identidad</label>
                 <input type="number" name="usu_catalogo" id="usu_catalogo" class="form-control">
             </div>
         </div>

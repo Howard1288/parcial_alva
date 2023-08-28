@@ -241,11 +241,15 @@ const modificar = async () => {
 };
 
 
-const eliminar = async (id) => {
+const eliminar = async (e) => {
+    const button = e.target;
+    const id = button.dataset.id
     if(await confirmacion('warning','¿Desea eliminar este registro?')){
         const body = new FormData()
-        body.append('asignacion_id', id)
-        const url = '/final_IS2_alvarado/API/asignacion_programadores/eliminar';
+        body.append('permiso_id', id)
+        const url = '/parcial_alva/API/asignaciones/eliminar';
+        const headers = new Headers();
+        headers.append("X-Requested-With","fetch")
         const config = {
             method : 'POST',
             body
@@ -290,3 +294,4 @@ formulario.addEventListener('submit', guardar);
 btnBuscar.addEventListener('click', buscar);
 datatable.on('click','.btn-warning', traeDatos )
 btnModificar.addEventListener('click', modificar)
+datatable.on('click','.btn-danger', eliminar)
