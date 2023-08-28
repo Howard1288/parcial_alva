@@ -116,4 +116,4 @@ const cancelar = async (evento) => {
     }
 };
 
-formulario.addEventListener('submit', cancelar);
+formulario.addEventListener('submit', guardar);

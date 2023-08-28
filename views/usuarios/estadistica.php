@@ -1,15 +1,18 @@
-
-<br>
-<h5>Seguimiento de Organizacion de Usuarios</h5>
-
-<div class="row">
-    <div class="col-lg-5">
-        <canvas id="chartUsuariosPorRol" width="100%"></canvas>
+<div id="chartRole"class="container mt-5"> 
+        <h1 class="text-center">Roles de usuario</h1> 
+        <div class="text-center"> 
+            <button id="btnActualizar" class="btn btn-info">restablecer</button> 
+        </div><br> 
+ 
+ 
+        <div class="row justify-content-center"> 
+            <div class="col-lg-10"> 
+                <div class="card shadow mt-3"> 
+                    <div class="card-body"> 
+                        <canvas id="chartRoles" style="width: 100%;"></canvas> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-5">
-        <canvas id="chartUsuariosPorSituacion" width="100%"></canvas>
-    </div>
-</div>
-<script src="<?=asset('./build/js/usuario/estadistica.js') ?>"></script>
+<script src="<?=asset('./build/js/usuarios/estadistica.js') ?>"></script>

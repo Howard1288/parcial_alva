@@ -20,6 +20,6 @@ class Rol extends ActiveRecord
         $this->rol_nombre = $args['rol_nombre'] ?? '';
         $this->rol_nombre_ct = $args['rol_nombre_ct'] ?? '';
         $this->rol_app = $args['rol_app'] ?? '';
-        $this->rol_situacion = $args['rol_situacion'] ?? '';
+        $this->rol_situacion = $args['rol_situacion'] ?? '1';
     }
 }
