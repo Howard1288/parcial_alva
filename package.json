@@ -1,5 +1,5 @@
 {
-  "name": "demo-app",
+  "name": "base-mvc",
   "version": "1.0.0",
   "description": "Aplicacion MVC demo",
   "main": "index.js",
