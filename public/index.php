@@ -26,7 +26,7 @@ $router->post('/API/asignaciones/eliminar', [AsignacionController::class,'elimin
 
 //estadistica
 
-$router->get('/usuarios/estadistica', [DetalleController::class,'estadistica']);
+$router->get('/estadistica', [DetalleController::class,'index']);
 $router->get('/API/usuarios/estadistica', [DetalleController::class,'detalleUsuarioAPI']);
 
 

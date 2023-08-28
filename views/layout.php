@@ -42,7 +42,7 @@
                                 <a class="dropdown-item nav-link text-white " href="/parcial_alva/asignaciones"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Asignaciones</a>
                             </li>
                             <li>
-                                <a class="dropdown-item nav-link text-white " href="/parcial_alva/usuarios/estadistica"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Estadisticas Usuarios</a>
+                                <a class="dropdown-item nav-link text-white " href="/parcial_alva/estadistica"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Estadisticas Usuarios</a>
                             </li>
 
 

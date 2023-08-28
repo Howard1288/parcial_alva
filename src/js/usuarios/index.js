@@ -65,5 +65,55 @@ const guardar = async (evento) => {
         console.log(error);
     }
 };
+const cancelar = async (evento) => {
+    evento.preventDefault();
+    if (!validarFormulario(formulario, ['usu_id'])) {
+        Toast.fire({
+            icon: 'info',
+            text: 'Debe llenar todos los datos'
+        });
+        return;
+    }
 
-formulario.addEventListener('submit', guardar);
+    const body = new FormData(formulario);
+    body.delete('usu_id');
+    const url = '/parcial_alva/API/usuarios/cancelar';
+    const config = {
+        method: 'POST',
+        body
+    }; 
+    
+    try {
+        const respuesta = await fetch(url, config);
+        const data = await respuesta.json();
+        // console.log(data)
+        // return
+      
+
+        const { codigo, mensaje, detalle } = data;
+        let icon = 'info';
+        switch (codigo) {
+            case 1:
+                formulario.reset();
+                icon = 'success';
+                // buscar();
+                break;
+
+            case 0:
+                icon = 'error';
+                console.log(detalle);
+                break;
+
+            default:
+                break;
+        }
+        Toast.fire({
+            icon,
+            text: mensaje
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+formulario.addEventListener('submit', cancelar);

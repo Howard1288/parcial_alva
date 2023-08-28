@@ -9,13 +9,13 @@ use MVC\Router;
 
 class DetalleController
 {
-    public static function estadistica(Router $router)
-    {
-        if(isset($_SESSION['auth_user'])){
-            $router->render('usuario/estadistica', []);
-        }else{
-            header('Location: /parcial_alva/');
-        }
+    public static function index(Router $router) {
+        $usuario = Usuario::all();
+        $router->render('usuarios/estadistica', [
+            'usuarios' => $usuario,
+        ]);
+  
+       
     }
 
     public static function detalleUsuarioAPI()
